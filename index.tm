@@ -24,7 +24,7 @@
 
   <\compact>
     <\enumerate>
-      <item>Pop_OS! installation procedure
+      <item><hlink|Pop_OS! installation procedure|misc/popinstall.tm>
 
       <item><hlink|Random links and notes|misc/random.tm>
     </enumerate>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:x="https://www.texmacs.org/2002/extensions" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <title>Pop_OS! Installation Procedure</title>
+    <meta content="TeXmacs 1.99.15" name="generator"></meta>
+    <style type="text/css">
+      body { text-align: justify } h5 { display: inline; padding-right: 1em }
+      h6 { display: inline; padding-right: 1em } table { border-collapse:
+      collapse } td { padding: 0.2em; vertical-align: baseline } dt { float:
+      left; min-width: 1.75em; text-align: right; padding-right: 0.75em;
+      font-weight: bold; } dd { margin-left: 2.75em; padding-bottom: 0.25em; }
+      dd p { padding-top: 0em; } .subsup { display: inline; vertical-align:
+      -0.2em } .subsup td { padding: 0px; text-align: left} .fraction {
+      display: inline; vertical-align: -0.8em } .fraction td { padding: 0px;
+      text-align: center } .wide { position: relative; margin-left: -0.4em }
+      .accent { position: relative; margin-left: -0.4em; top: -0.1em }
+      .title-block { width: 100%; text-align: center } .title-block p {
+      margin: 0px } .compact-block p { margin-top: 0px; margin-bottom: 0px }
+      .left-tab { text-align: left } .center-tab { text-align: center }
+      .balloon-anchor { border-bottom: 1px dotted #000000; outline: none;
+      cursor: help; position: relative; } .balloon-anchor [hidden] {
+      margin-left: -999em; position: absolute; display: none; }
+      .balloon-anchor: hover [hidden] { position: absolute; left: 1em; top:
+      2em; z-index: 99; margin-left: 0; width: 500px; display: inline-block; }
+      .balloon-body { } .ornament { border-width: 1px; border-style: solid;
+      border-color: black; display: inline-block; padding: 0.2em; } .right-tab
+      { float: right; position: relative; top: -1em; } .no-breaks {
+      white-space: nowrap; } 
+    </style>
+    <link href="/notes/style.css" type="text/css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <table class="title-block" style="margin-bottom: 2em">
+      <tr>
+        <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
+          <tr>
+            <td><font style="font-size: 168.2%"><strong>Pop_OS! Installation
+            Procedure</strong></font></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <p style="margin-top: 1em">
+      <strong>Remark. </strong>Tested on:
+    </p>
+    <div class="compact-block" style="margin-bottom: 1em">
+      <ul>
+        <li>
+          <p>
+            CH-20B (2020-10-23), Pop!_OS 20.04
+          </p>
+        </li>
+        <li>
+          <p>
+            CH-20B (2020-10-24), Pop!_OS 20.04
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p>
+      This is a recording of steps I took to set up a new system, heavily
+      based on <a href="https://mutschler.eu/linux/install-guides/pop-os-btrfs/">this article</a> on setting up
+      btrfs&#x2011;on&#x2011;luks Pop!_OS.
+    </p>
+    <h2 id="auto-1">1<span style="margin-left: 1em"></span>Miscellanous useful commands<span style="margin-left: 1em"></span></h2>
+    <p>
+      <font style="font-size: 84.1%"><i>Especially useful on the LiveCD.</i></font>
+    </p>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+<pre class="verbatim" xml:space="preserve">gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
+nvidia-settings --assign \
+    CurrentMetaMode=&quot;nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }&quot;</pre></pre>
+    </div>
+    <h2 id="auto-2">2<span style="margin-left: 1em"></span>Procedure<span style="margin-left: 1em"></span></h2>
+    <p>
+      If necessary, <a href="https://discourse.ubuntu.com/t/ubuntu-installation-on-computers-with-intel-r-rst-enabled/15347">disable RST</a> first.
+    </p>
+    <h3 id="auto-3">2.1<span style="margin-left: 1em"></span>Partitioning<span style="margin-left: 1em"></span></h3>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            esp
+          </dt>
+          <dd>
+            <p>
+              512MiB<span style="margin-left: 1em"></span>fat32<span style="margin-left: 1em"></span><tt class="verbatim">boot,esp</tt>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            recovery
+          </dt>
+          <dd>
+            <p>
+              4GiB<span style="margin-left: 1em"></span>fat32
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            cryptdata
+          </dt>
+          <dd>
+            <p>
+              unformatted
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <p>
+      Afterwards, set up the LUKS partition:
+    </p>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+<pre class="verbatim" xml:space="preserve">cryptsetup luksFormat /dev/&hellip;      # Make LUKS partition
+cryptsetup open /dev/&hellip; cryptdata  # Open it
+
+pvcreate /dev/mapper/cryptdata      # Create LVM physical volume
+
+vgcreate data /dev/mapper/cryptdata # Volume group
+lvcreate -n root -l 100%FREE data   # Logical volume
+
+cryptsetup close data-root
+cryptsetup close cryptdata          # Close up</pre></pre>
+    </div>
+    <h3 id="auto-4">2.2<span style="margin-left: 1em"></span>Installer<span style="margin-left: 1em"></span></h3>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            esp
+          </dt>
+          <dd>
+            <p>
+              <class style="font-variant: small-caps">as </class>fat32, <class style="font-variant: small-caps">mount</class>
+              /boot/efi
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            recovery
+          </dt>
+          <dd>
+            <p>
+              <class style="font-variant: small-caps">as</class> fat32, <class style="font-variant: small-caps">mount</class>
+              /recovery
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            cryptdata
+          </dt>
+          <dd>
+            <p>
+              Decrypt, then <class style="font-variant: small-caps">as</class> btrfs, <class style="font-variant: small-caps">mount</class>
+              /
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <p>
+      <strong>Do not reboot/power off after completion!</strong> Return to the
+      terminal to complete post-install steps.
+    </p>
+    <h3 id="auto-5">2.3<span style="margin-left: 1em"></span>Post-install<span style="margin-left: 1em"></span></h3>
+    <h4 id="auto-6">2.3.1<span style="margin-left: 1em"></span>Set up subvolumes<span style="margin-left: 1em"></span></h4>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+# Mount btrfs partition
+cryptsetup open /dev/&hellip; cryptdata
+mount -o ssd,noatime,space_cache,commit=120,compress=zstd /dev/mapper/data-root /mnt
+
+# Move into @ subvol
+cd /mnt
+btrfs sub create @
+ls | grep -v @ | xargs mv -t @
+
+# Create /var/log subvol
+btrfs sub create @varlog
+cp -ax --reflink=always @/var/log/. @varlog
+rm @/var/log -rf
+
+# Create other subvolumes
+btrfs sub create @home
+btrfs sub create @swap
+
+# Create swapfile
+truncate -s 0 @swap/swapfile
+chattr +C @swap/swapfile
+btrfs property set @swap/swapfile compression none
+fallocate -l 4G @swap/swapfile
+chmod 600 @swap/swapfile
+mkswap @swap/swapfile
+mkdir @/swap</pre>
+    </div>
+    <h4 id="auto-7">2.3.2<span style="margin-left: 1em"></span>Edit /etc/fstab<span style="margin-left: 1em"></span></h4>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+# /etc/fstab: static file system information.
+# &lt;file system&gt;  &lt;mount point&gt;  &lt;type&gt;  &lt;options&gt;  &lt;dump&gt;  &lt;pass&gt;
+PARTUUID=&hellip; /boot/efi vfat umask=0077 0 0
+PARTUUID=&hellip; /recovery vfat umask=0077 0 0
+UUID=&hellip; / btrfs defaults,subvol=@,ssd,noatime,space_cache,commit=120,compress=zstd 0 0
+UUID=&hellip; /home btrfs defaults,subvol=@home,ssd,noatime,space_cache,commit=120,compress=zstd 0 0
+UUID=&hellip; /var/log btrfs defaults,subvol=@varlog,ssd,noatime,space_cache,commit=120,compress=zstd 0 0
+UUID=&hellip; /swap btrfs defaults,subvol=@swap,compress=no 0 0
+/swap/swapfile none swap defaults 0 0</pre>
+    </div>
+    <h4 id="auto-8">2.3.3<span style="margin-left: 1em"></span>Add rootflags<span style="margin-left: 1em"></span></h4>
+    <p>
+      Add <tt class="verbatim">rootflags=subvol=@</tt> to
+    </p>
+    <div class="compact-block">
+      <ul>
+        <li>
+          <p>
+            the last line of
+            /mnt/@/boot/efi/loader/entries/Pop_OS-current.conf, and to
+          </p>
+        </li>
+        <li>
+          <p>
+            <tt class="verbatim">user.kernel_options</tt> in
+            /mnt/@/etc/kernelstub/configuration.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <h4 id="auto-9">2.3.4<span style="margin-left: 1em"></span><class style="font-variant: small-caps">chroot</class> and
+    set-up<span style="margin-left: 1em"></span></h4>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+cd /
+umount -l /mnt
+mount -o <tt class="verbatim">defaults,subvol=@,ssd,noatime,space_cache,commit=120,compress=zstd /dev/mapper/data-root /mnt</tt>
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+cp /etc/resolv.conf /mnt/etc
+chroot /mnt
+
+mount -av # check fstab correct
+apt install btrfs-progs
+update-initramfs -c -k all</pre>
+    </div>
+    <p>
+      Lastly, add <tt class="verbatim">timeout 5</tt> to
+      /mnt/@/boot/efi/loader/loader.conf if desired.
+    </p>
+    <h4 id="auto-10">2.3.5<span style="margin-left: 1em"></span>Other <class style="font-variant: small-caps">btrfs</class>
+    partitions<span style="margin-left: 1em"></span></h4>
+    <p>
+      If necessary, create <class style="font-variant: small-caps">btrfs</class> partitions on other
+      drives, and create subvolumes as desired. Set up all encrypted
+      partitions to unlock together using <class style="font-variant: small-caps"><a href="https://unix.stackexchange.com/questions/392284/using-a-single-passphrase-to-unlock-multiple-encrypted-disks-at-boot">decrypt_keyctl</a></class>&mdash;add
+      <tt class="verbatim">keyscript=decrypt_keyctl</tt> to the options of each entry in
+      /etc/crypttab, and then run <tt class="verbatim">update-initramfs -u</tt>.
+    </p>
+    <h3 id="auto-11">2.4<span style="margin-left: 1em"></span>Post-reboot<span style="margin-left: 1em"></span></h3>
+    <div class="compact-block">
+      <ul>
+        <li>
+          <p>
+            Set <class style="font-variant: small-caps">apt</class> source to <a href="mirror.0x.sg"><tt>mirror.0x.sg</tt></a>
+            in /etc/apt/sources.list.
+          </p>
+        </li>
+        <li>
+          <p>
+            Setup <a href="https://github.com/chuahou/kiwami"><class style="font-variant: small-caps">kiwami</class></a>
+          </p>
+          <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+            <pre class="verbatim" xml:space="preserve">
+mkdir -p ~/dev &amp;&amp; cd ~/dev
+git clone git@github.com:chuahou/kiwami --recurse-submodules
+cd kiwami
+./init.sh</pre>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h4 id="auto-12">2.4.1<span style="margin-left: 1em"></span>Install <class style="font-variant: small-caps">Windows</class><span
+    style="margin-left: 1em"></span></h4>
+    <p>
+      Remember to disable <class style="font-variant: small-caps">fast boot</class> and use the setup
+      spreadsheet.
+    </p>
+    <h4 id="auto-13">2.4.2<span style="margin-left: 1em"></span><class style="font-variant: small-caps">Firefox</class>
+    configuration<span style="margin-left: 1em"></span></h4>
+    <p>
+      In <tt class="verbatim">about:config</tt>, set
+    </p>
+    <div class="compact-block">
+      <ul>
+        <li>
+          <p>
+            <tt class="verbatim">widget.content.gtk-theme-override</tt>
+          </p>
+        </li>
+        <li>
+          <p>
+            <tt class="verbatim">ui.key.menuAccessKeyFocuses</tt>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <h4 id="auto-14">2.4.3<span style="margin-left: 1em"></span>HP printer setup<span style="margin-left: 1em"></span></h4>
+    <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
+      <pre class="verbatim" xml:space="preserve">
+sudo apt-get install hplip python3-pyqt5
+sudo hp-setup
+sudo hp-plugin</pre>
+    </div>
+  </body>
+</html>

@@ -17,7 +17,7 @@
     </src-comment>
   </active*>
 
-  <provide|html-extra-css|<tuple|/style.css>>
+  <provide|html-extra-css|<tuple|/notes/style.css>>
 
   <\active*>
     <\src-comment>

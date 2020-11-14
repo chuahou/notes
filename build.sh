@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2020 Chua Hou
 
+# update style
+cp notesStyle.ts $HOME/.TeXmacs/packages/notesStyle.ts
+
 # find all .tm files newer than their .html counterparts
 for tmfile in $(find . -type f -name '*.tm'); do
 	if [ $tmfile -nt $(sed 's/\.tm/\.html/' <<< $tmfile) ]; then

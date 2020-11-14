@@ -38,6 +38,8 @@
   </active*>
 
   <assign|verbatim|<macro|body|<small|<with|font|Ioslabka|language|verbatim|<arg|body>>>>>
+
+  <assign|side-note|<macro|body|<small|<with|font-shape|italic|<arg|body>>>>>
 </body>
 
 <\initial>

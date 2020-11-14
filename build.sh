@@ -16,5 +16,10 @@ done
 texmacs $(find . -type f -name '*.tm.tmp' |
 	sed 's/\(.*\)\.tm.tmp/-c \1.tm.tmp \1.html/') -q
 
+# add responsiveness
+for tmfile in $(find . -type f -name '*.tm.tmp'); do
+	sed -i 's/<\/title>/<\/title>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n/' $(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
+done
+
 # remove created temporary files
 find . -type f -name '*.tm.tmp' -exec rm {} \;

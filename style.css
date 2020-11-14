@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Linux Biolinum'; /* normal */
+    src: url('/fonts/linux-biolinum/LinBiolinum_R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* italic */
+    src: url('/fonts/linux-biolinum/LinBiolinum_RI.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* bold */
+    src: url('/fonts/linux-biolinum/LinBiolinum_RB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	width: 80%;
+	max-width: 750px;
+	margin: 40px auto;
+	padding: 0 10px;
+	font: 120%/1.4 Linux Biolinum, Cantarell, DejaVu Sans, Roboto, Helvetica, Arial, sans-serif;
+	color: #222;
+	background: #fffdf7;
+}

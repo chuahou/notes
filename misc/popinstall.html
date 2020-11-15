@@ -38,9 +38,8 @@
         <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
           <tr>
             <td><font style="font-size: 168.2%"><strong>Pop_OS! Installation Procedure<span
-            style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="../index.html">..</a>
-            ]</class></font> <font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="/notes/index.html">top</a>
-            ]</class></font></strong></font></td>
+            style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="../index.html">..</a>]</class></font>
+            <font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="/notes/index.html">top</a>]</class></font></strong></font></td>
           </tr>
         </table></td>
       </tr>
@@ -68,7 +67,7 @@
       btrfs&#x2011;on&#x2011;luks Pop!_OS.
     </p>
     <h2 id="auto-1">1<span style="margin-left: 1em"></span>Miscellanous useful commands<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
     <p>
       <font style="font-size: 84.1%"><i>Especially useful on the LiveCD.</i></font>
     </p>
@@ -79,12 +78,12 @@ nvidia-settings --assign \
     CurrentMetaMode=&quot;nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }&quot;</pre></pre>
     </div>
     <h2 id="auto-2">2<span style="margin-left: 1em"></span>Procedure<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class
-    style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
     <p>
       If necessary, <a href="https://discourse.ubuntu.com/t/ubuntu-installation-on-computers-with-intel-r-rst-enabled/15347">disable RST</a> first.
     </p>
     <h3 id="auto-3">2.1<span style="margin-left: 1em"></span>Partitioning<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h3>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h3>
     <div class="compact-block">
       <dl>
         <p>
@@ -136,7 +135,7 @@ cryptsetup close data-root
 cryptsetup close cryptdata          # Close up</pre></pre>
     </div>
     <h3 id="auto-4">2.2<span style="margin-left: 1em"></span>Installer<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class
-    style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h3>
+    style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h3>
     <div class="compact-block">
       <dl>
         <p>
@@ -179,9 +178,9 @@ cryptsetup close cryptdata          # Close up</pre></pre>
       terminal to complete post-install steps.
     </p>
     <h3 id="auto-5">2.3<span style="margin-left: 1em"></span>Post-install<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h3>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h3>
     <h4 id="auto-6">2.3.1<span style="margin-left: 1em"></span>Set up subvolumes<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h4>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h4>
     <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
       <pre class="verbatim" xml:space="preserve">
 # Mount btrfs partition
@@ -212,7 +211,7 @@ mkswap @swap/swapfile
 mkdir @/swap</pre>
     </div>
     <h4 id="auto-7">2.3.2<span style="margin-left: 1em"></span>Edit /etc/fstab<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h4>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h4>
     <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
       <pre class="verbatim" xml:space="preserve">
 # /etc/fstab: static file system information.
@@ -226,7 +225,7 @@ UUID=&hellip; /swap btrfs defaults,subvol=@swap,compress=no 0 0
 /swap/swapfile none swap defaults 0 0</pre>
     </div>
     <h4 id="auto-8">2.3.3<span style="margin-left: 1em"></span>Add rootflags<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h4>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h4>
     <p>
       Add <tt class="verbatim">rootflags=subvol=@</tt> to
     </p>
@@ -247,8 +246,8 @@ UUID=&hellip; /swap btrfs defaults,subvol=@swap,compress=no 0 0
       </ul>
     </div>
     <h4 id="auto-9">2.3.4<span style="margin-left: 1em"></span><class style="font-variant: small-caps">chroot</class> and
-    set-up<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a>
-    ]</class></font><span style="margin-left: 1em"></span></h4>
+    set-up<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span
+    style="margin-left: 1em"></span></h4>
     <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
       <pre class="verbatim" xml:space="preserve">
 cd /
@@ -267,8 +266,8 @@ update-initramfs -c -k all</pre>
       /mnt/@/boot/efi/loader/loader.conf if desired.
     </p>
     <h4 id="auto-10">2.3.5<span style="margin-left: 1em"></span>Other <class style="font-variant: small-caps">btrfs</class>
-    partitions<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a>
-    ]</class></font><span style="margin-left: 1em"></span></h4>
+    partitions<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span
+    style="margin-left: 1em"></span></h4>
     <p>
       If necessary, create <class style="font-variant: small-caps">btrfs</class> partitions on other
       drives, and create subvolumes as desired. Set up all encrypted
@@ -277,7 +276,7 @@ update-initramfs -c -k all</pre>
       /etc/crypttab, and then run <tt class="verbatim">update-initramfs -u</tt>.
     </p>
     <h3 id="auto-11">2.4<span style="margin-left: 1em"></span>Post-reboot<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class
-    style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h3>
+    style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h3>
     <div class="compact-block">
       <ul>
         <li>
@@ -301,15 +300,15 @@ cd kiwami
       </ul>
     </div>
     <h4 id="auto-12">2.4.1<span style="margin-left: 1em"></span>Install <class style="font-variant: small-caps">Windows</class><span
-    style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a>
-    ]</class></font><span style="margin-left: 1em"></span></h4>
+    style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span
+    style="margin-left: 1em"></span></h4>
     <p>
       Remember to disable <class style="font-variant: small-caps">fast boot</class> and use the setup
       spreadsheet.
     </p>
     <h4 id="auto-13">2.4.2<span style="margin-left: 1em"></span><class style="font-variant: small-caps">Firefox</class>
-    configuration<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a>
-    ]</class></font><span style="margin-left: 1em"></span></h4>
+    configuration<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span
+    style="margin-left: 1em"></span></h4>
     <p>
       In <tt class="verbatim">about:config</tt>, set
     </p>
@@ -328,7 +327,7 @@ cd kiwami
       </ul>
     </div>
     <h4 id="auto-14">2.4.3<span style="margin-left: 1em"></span>HP printer setup<span style="margin-left: 1em"></span><font
-    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h4>
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h4>
     <div class="compact-block" style="margin-top: 1em; margin-bottom: 1em; margin-left: 35.145870328812px; text-indent: 0em">
       <pre class="verbatim" xml:space="preserve">
 sudo apt-get install hplip python3-pyqt5

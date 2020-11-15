@@ -65,8 +65,7 @@
 
   <assign|old-doc-title|<value|doc-title>>
 
-  <assign|title-link|<macro|text|tgt|<tiny|<with|font-shape|small-caps|[
-  <hlink|<arg|text>|<arg|tgt>> ]>>>>
+  <assign|title-link|<macro|text|tgt|<tiny|<with|font-shape|small-caps|[<hlink|<arg|text>|<arg|tgt>>]>>>>
 
   <assign|doc-title|<macro|title|<old-doc-title|<arg|title><space|1em><title-link|..|../index.tm>
   <title-link|top|~/dev/notes/index.tm>>>>

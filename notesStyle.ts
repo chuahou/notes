@@ -40,6 +40,40 @@
   <assign|verbatim|<macro|body|<small|<with|font|Ioslabka|language|verbatim|<arg|body>>>>>
 
   <assign|side-note|<macro|body|<small|<with|font-shape|italic|<arg|body>>>>>
+
+  <assign|old-doc-title|<value|doc-title>>
+
+  <assign|title-link|<macro|text|tgt|<tiny|<with|font-shape|small-caps|[
+  <hlink|<arg|text>|<arg|tgt>> ]>>>>
+
+  <assign|doc-title|<macro|title|<old-doc-title|<arg|title><space|1em><title-link|..|../index.tm>
+  <title-link|top|~/dev/notes/index.tm>>>>
+
+  <assign|top-doc-title|<macro|title|<old-doc-title|<arg|title>>>>
+
+  <assign|old-section|<value|section>>
+
+  <assign|section|<macro|text|<old-section|<arg|text><space|1em><title-link|up|#>>>>
+
+  <assign|old-subsection|<value|subsection>>
+
+  <assign|subsection|<macro|text|<old-subsection|<arg|text><space|1em><title-link|up|#>>>>
+
+  <assign|old-subsubsection|<value|subsubsection>>
+
+  <assign|subsubsection|<macro|text|<old-subsubsection|<arg|text><space|1em><title-link|up|#>>>>
+
+  <assign|old-section*|<value|section*>>
+
+  <assign|section*|<macro|text|<old-section*|<arg|text><space|1em><title-link|up|#>>>>
+
+  <assign|old-subsection*|<value|subsection*>>
+
+  <assign|subsection*|<macro|text|<old-subsection*|<arg|text><space|1em><title-link|up|#>>>>
+
+  <assign|old-subsubsection*|<value|subsubsection*>>
+
+  <assign|subsubsection*|<macro|text|<old-subsubsection*|<arg|text><space|1em><title-link|up|#>>>>
 </body>
 
 <\initial>

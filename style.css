@@ -27,10 +27,8 @@ body {
 	width: 80%;
 	max-width: 750px;
 	margin: 40px auto;
-	padding: 0 10px;
 	font: 120%/1.2 Linux Biolinum, Cantarell, DejaVu Sans, Roboto, Helvetica, Arial, sans-serif;
-	color: #222;
-	background: #fffdf7;
+	background: #fffdfd;
 }
 
 h1, h2, h3, h4, h5, h6 {

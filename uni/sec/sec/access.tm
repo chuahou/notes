@@ -117,6 +117,19 @@
   <side-note|Note that the permission <with|font-shape|small-caps|write>
   includes permissions to read the file (something like <verbatim|rw> mode),
   while <with|font-shape|small-caps|append> does not.>
+
+  <subsection|Role-based access control (RBAC)>
+
+  <\itemize>
+    <item><dfn|Privileges> are rights to execute specific operations (usually
+    OS functions), and act as an <dfn|intermediate layer> between users and
+    operations.
+
+    <item><dfn|Roles> are groups with some privileges, which users are
+    assigned to.
+  </itemize>
+
+  <subsection|Protection rings>
 </body>
 
 <\initial>
@@ -132,6 +145,8 @@
     <associate|auto-2|<tuple|2|1>>
     <associate|auto-3|<tuple|3|1>>
     <associate|auto-4|<tuple|3.1|1>>
+    <associate|auto-5|<tuple|3.2|2>>
+    <associate|auto-6|<tuple|3.3|2>>
   </collection>
 </references>
 
@@ -139,24 +154,34 @@
   <\collection>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Definitions
-      [2.1]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14FC13FA8-149C03128-EA70>|<link|hyperlink|<id|%14FC13FA8-149C03128-EA70>|<url|#>>|up>]>>>
+      [2.1]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-158CD2EF0-EA70>|<link|hyperlink|<id|%155DE4208-158CD2EF0-EA70>|<url|#>>|up>]>>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Access
-      control structures [2.1]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14FC13FA8-1493D7E40-EA70>|<link|hyperlink|<id|%14FC13FA8-1493D7E40-EA70>|<url|#>>|up>]>>>
+      control structures [2.1]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-156EF9118-EA70>|<link|hyperlink|<id|%155DE4208-156EF9118-EA70>|<url|#>>|up>]>>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>Security
-      models<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14FC13FA8-149B2C598-EA70>|<link|hyperlink|<id|%14FC13FA8-149B2C598-EA70>|<url|#>>|up>]>>>
+      models<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-156F170B0-EA70>|<link|hyperlink|<id|%155DE4208-156F170B0-EA70>|<url|#>>|up>]>>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3><vspace|0.5fn>
 
       <with|par-left|<quote|1tab>|3.1<space|2spc><with|font-shape|<quote|small-caps>|Bell-LaPadula>
-      model [2.2]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14FC13FA8-14ED4E2C8-EA70>|<link|hyperlink|<id|%14FC13FA8-14ED4E2C8-EA70>|<url|#>>|up>]>>
+      model [2.2]<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-154EE9140-EA70>|<link|hyperlink|<id|%155DE4208-154EE9140-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-4>>
+
+      <with|par-left|<quote|1tab>|3.2<space|2spc>Role-based access control
+      (RBAC)<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-158CDB920-EA70>|<link|hyperlink|<id|%155DE4208-158CDB920-EA70>|<url|#>>|up>]>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-5>>
+
+      <with|par-left|<quote|1tab>|3.3<space|2spc>Protection
+      rings<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%155DE4208-158CDBF40-EA70>|<link|hyperlink|<id|%155DE4208-158CDBF40-EA70>|<url|#>>|up>]>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-6>>
     </associate>
   </collection>
 </auxiliary>

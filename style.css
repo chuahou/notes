@@ -1,22 +1,22 @@
 @font-face {
-    font-family: 'Linux Biolinum'; /* normal */
-    src: url('/notes/fonts/linux-biolinum/LinBiolinum_R.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Linux Biolinum'; /* normal */
+	src: url('/notes/fonts/linux-biolinum/LinBiolinum_R.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Linux Biolinum'; /* italic */
-    src: url('/notes/fonts/linux-biolinum/LinBiolinum_RI.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
+	font-family: 'Linux Biolinum'; /* italic */
+	src: url('/notes/fonts/linux-biolinum/LinBiolinum_RI.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
 }
 
 @font-face {
-    font-family: 'Linux Biolinum'; /* bold */
-    src: url('/notes/fonts/linux-biolinum/LinBiolinum_RB.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'Linux Biolinum'; /* bold */
+	src: url('/notes/fonts/linux-biolinum/LinBiolinum_RB.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
 }
 
 html, body {
@@ -31,6 +31,26 @@ body {
 	font: 120%/1.4 Linux Biolinum, Cantarell, DejaVu Sans, Roboto, Helvetica, Arial, sans-serif;
 	color: #222;
 	background: #fffdf7;
+}
+
+a {
+	color: #17a;
+	text-decoration: none;
+}
+a:hover {
+	color: #39c;
+}
+a.standalone {
+	color: #a22;
+	font-size: 0.9em;
+	padding: 0.45em 0.7em;
+	border: 2px solid #a22;
+	font-weight: bold;
+}
+a.standalone:hover {
+	color: #b44;
+	border-color: #b44;
+	background-color:#fdd;
 }
 
 .toplink {

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:x="https://www.texmacs.org/2002/extensions" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <title>Lexical analysis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta content="TeXmacs 1.99.15" name="generator"></meta>
+    <style type="text/css">
+      body { text-align: justify } h5 { display: inline; padding-right: 1em }
+      h6 { display: inline; padding-right: 1em } table { border-collapse:
+      collapse } td { padding: 0.2em; vertical-align: baseline } dt { float:
+      left; min-width: 1.75em; text-align: right; padding-right: 0.75em;
+      font-weight: bold; } dd { margin-left: 2.75em; padding-bottom: 0.25em; }
+      dd p { padding-top: 0em; } .subsup { display: inline; vertical-align:
+      -0.2em } .subsup td { padding: 0px; text-align: left} .fraction {
+      display: inline; vertical-align: -0.8em } .fraction td { padding: 0px;
+      text-align: center } .wide { position: relative; margin-left: -0.4em }
+      .accent { position: relative; margin-left: -0.4em; top: -0.1em }
+      .title-block { width: 100%; text-align: center } .title-block p {
+      margin: 0px } .compact-block p { margin-top: 0px; margin-bottom: 0px }
+      .left-tab { text-align: left } .center-tab { text-align: center }
+      .balloon-anchor { border-bottom: 1px dotted #000000; outline: none;
+      cursor: help; position: relative; } .balloon-anchor [hidden] {
+      margin-left: -999em; position: absolute; display: none; }
+      .balloon-anchor: hover [hidden] { position: absolute; left: 1em; top:
+      2em; z-index: 99; margin-left: 0; width: 500px; display: inline-block; }
+      .balloon-body { } .ornament { border-width: 1px; border-style: solid;
+      border-color: black; display: inline-block; padding: 0.2em; } .right-tab
+      { float: right; position: relative; top: -1em; } .no-breaks {
+      white-space: nowrap; } 
+    </style>
+    <link href="/notes/style.css" type="text/css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <table class="title-block" style="margin-bottom: 2em">
+      <tr>
+        <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
+          <tr>
+            <td><font style="font-size: 168.2%"><strong>Lexical analysis<span style="margin-left: 1em"></span><font
+            style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="../index.html">..</a> ]</class></font> <font
+            style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="/notes/index.html">top</a>
+            ]</class></font></strong></font></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <p>
+      The <dfn>lexical analyzer</dfn> (more commonly <dfn>lexer</dfn>) takes
+      in an input stream, identifying <b>meaningful tokens</b>, ignoring
+      whitespace/comments.
+    </p>
+    <h2 id="auto-1">1<span style="margin-left: 1em"></span>Regular expressions<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    <p>
+      <span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span
+      style="margin-left: 0.16665em"></span> are used to specify valid tokens.
+    </p>
+    <div style="margin-top: 1em; margin-bottom: 1em">
+      <table style="width: 100%">
+        <tbody><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em"><table style="display: inline-table; vertical-align: middle">
+            <tbody><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><b>Regex</b></td>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><b>Meaning</b></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-1.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: 0em; height: 0.546133333333333em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">empty string</td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-2.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: 0em; height: 0.546133333333333em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">literal character <tt class="verbatim">a</tt></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-3.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484848em; margin-top: -0.0380121212121213em; vertical-align: -0.148363636363636em; height: 0.942739393939394em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">concatenation</td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-4.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">union</td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-5.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484848em; margin-top: -0.0604121212121212em; vertical-align: -0.173381818181818em; height: 1.01614545454545em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">Kleene star (closure)</td>
+            </tr></tbody>
+          </table></td>
+        </tr><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em; height: 0.5em"></td>
+        </tr><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em; padding-left: 1.5em; padding-right: 1.5em"><div class="caption">
+            <font style="font-size: 84.1%"><p>
+              <b>Table 1. </b><a id="auto-2"></a>Regular expression syntax.
+            </p></font>
+          </div></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <p>
+      <dfn>Extended regular expressions</dfn> add
+    </p>
+    <div style="margin-top: 1em; margin-bottom: 1em">
+      <table style="width: 100%">
+        <tbody><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em"><table style="display: inline-table; vertical-align: middle">
+            <tbody><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><b>ERE</b></td>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><b>Meaning</b></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-6.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0641939393939394em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.14191515151515em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em"><img src="lex-7.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484853em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-8.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0641939393939394em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.14191515151515em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em"><img src="lex-9.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-10.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484848em; margin-top: -0.0821333333333334em; vertical-align: -0.148363636363636em; height: 0.992387878787879em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em"><img src="lex-11.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-12.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484848em; margin-top: -0.0380121212121213em; vertical-align: -0.148363636363636em; height: 0.942739393939394em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em"><img src="lex-13.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484853em; margin-top: -0.0852363636363637em; vertical-align: -0.173381818181818em; height: 1.0409696969697em"></img></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-14.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0641939393939394em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.14191515151515em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">any character except <span style="margin-left: 0.16665em"></span>.<span
+              style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span>.<span style="margin-left: 0.16665em"></span></td>
+            </tr><tr>
+              <td style="padding-left: 1em; padding-right: 1em; text-align: center"><img src="lex-15.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0496484848484849em; vertical-align: 0em; height: 0.544484848484849em"></img></td>
+              <td style="padding-left: 1em; padding-right: 1em">any character</td>
+            </tr></tbody>
+          </table></td>
+        </tr><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em; height: 0.5em"></td>
+        </tr><tr>
+          <td style="text-align: center; padding-left: 0em; padding-right: 0em; padding-left: 1.5em; padding-right: 1.5em"><div class="caption">
+            <font style="font-size: 84.1%"><p>
+              <b>Table 2. </b><a id="auto-3"></a>EREs.
+            </p></font>
+          </div></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <h2 id="auto-4">2<span style="margin-left: 1em"></span>Non-deterministic finite automata<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    <p>
+      Regexes can be written as a NFA using Thompson's construction, accepting
+      a string if there is a path&mdash;labelled with the string's
+      characters&mdash;from the start state to a final state.
+    </p>
+    <p>
+      NFAs are a directed graph with edges consuming a character, otherwise
+      being labelled with <span class="no-breaks"><img src="lex-1.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: 0em; height: 0.546133333333333em"></img>.</span> The
+      start state is labelled with an incoming arrow, and the final state is
+      marked with a *.
+    </p>
+    <p>
+      See the slides/coursebook for excellent examples.
+    </p>
+    <h2 id="auto-5">3<span style="margin-left: 1em"></span>Deterministic finite automata<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    <p>
+      NFAs are non-deterministic (duh) and are hence hard to use
+      programmatically for lexing. NFAs can be converted to DFAs (they are
+      equivalent) by <dfn>subset construction</dfn>:
+    </p>
+    <div class="compact-block">
+      <ol>
+        <li>
+          <p>
+            Every state in the DFA is labelled by the subset of possible
+            states in the NFA we could be in<a id="dfapoint"></a>
+          </p>
+        </li>
+        <li>
+          <p>
+            Dustbin state <img src="lex-16.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0591515151515152em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: -0.212169696969697em; height: 0.767806060606061em"></img> is where all other undefined
+            transitions lead to
+          </p>
+        </li>
+        <li>
+          <p>
+            Transition function <img src="lex-17.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484849em; margin-top: -0.0762181818181818em; vertical-align: 0em; height: 0.844024242424242em"></img> is total (and is <img
+            src="lex-18.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.0496484848484848em; margin-top: -0.0380121212121213em; vertical-align: -0.201018181818182em; height: 0.992969696969697em"></img> instead of <span class="no-breaks"><img src="lex-19.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.0496484848484848em; margin-top: -0.0380121212121213em; vertical-align: -0.201018181818182em; height: 0.992969696969697em"></img>)</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            There are no <img src="lex-1.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: 0em; height: 0.546133333333333em"></img> transitions (they are
+            captured by point <a href="#dfapoint">1</a>)
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p>
+      Once again, see slides/coursebook for an excellent example.
+    </p>
+    <h2 id="auto-6">4<span style="margin-left: 1em"></span>Lex<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class
+    style="font-variant: small-caps">[ <a href="#">up</a> ]</class></font><span style="margin-left: 1em"></span></h2>
+    <p>
+      The tool <class style="font-variant: small-caps">Lex</class> takes as input a script consisting of
+      a list of regexes, creating a DFA for their union. It returns the
+      longest sequence that mathces a rule, prioritizing rules that occur
+      earlier in the script.
+    </p>
+  </body>
+</html>

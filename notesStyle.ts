@@ -41,6 +41,28 @@
 
   <assign|side-note|<macro|body|<small|<with|font-shape|italic|<arg|body>>>>>
 
+  <assign|uni-summary|<\macro|acknowledge|leclist|refs>
+    <side-note|<arg|acknowledge>>
+
+    <subsection*|Chapters>
+
+    <compact|<itemize|<arg|leclist>>>
+
+    <subsection*|References>
+
+    <compact|<itemize|<arg|refs>>>
+  </macro>>
+
+  <assign|uni-summary-ref|<\macro|author|title|year>
+    <arg|author>. <with|font-shape|italic|<arg|title>>, <arg|year>.
+  </macro>>
+
+  <\active*>
+    <\src-comment>
+      Links for headers.
+    </src-comment>
+  </active*>
+
   <assign|old-doc-title|<value|doc-title>>
 
   <assign|title-link|<macro|text|tgt|<tiny|<with|font-shape|small-caps|[

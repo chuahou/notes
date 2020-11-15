@@ -28,7 +28,7 @@
 
       <item>Models of Computation
 
-      <item>Computer Security
+      <item><hlink|Computer Security|sec/index.tm>
 
       <item>Machine Learning
     </itemize>
@@ -52,15 +52,14 @@
 <\auxiliary>
   <\collection>
     <\associate|toc>
-      <with|par-left|<quote|1tab>|Part A<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[
-      <locus|<id|%4E2E90AF8-4E1442468-EA70>|<link|hyperlink|<id|%4E2E90AF8-4E1442468-EA70>|<url|#>>|up>
-      ]>> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-      <no-break><pageref|auto-1>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Part
+      A<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14A71A6E8-14AAB1BD0-EA70>|<link|hyperlink|<id|%14A71A6E8-14AAB1BD0-EA70>|<url|#>>|up>]>>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <with|par-left|<quote|2tab>|Michaelmas Term,
-      2020<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[
-      <locus|<id|%4E2E90AF8-4E14EE098-EA70>|<link|hyperlink|<id|%4E2E90AF8-4E14EE098-EA70>|<url|#>>|up>
-      ]>> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <with|par-left|<quote|1tab>|Michaelmas Term,
+      2020<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%14A71A6E8-14AAB1238-EA70>|<link|hyperlink|<id|%14A71A6E8-14AAB1238-EA70>|<url|#>>|up>]>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2>>
     </associate>
   </collection>

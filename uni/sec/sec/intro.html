@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:x="https://www.texmacs.org/2002/extensions" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <title>Security: Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta content="TeXmacs 1.99.15" name="generator"></meta>
+    <style type="text/css">
+      body { text-align: justify } h5 { display: inline; padding-right: 1em }
+      h6 { display: inline; padding-right: 1em } table { border-collapse:
+      collapse } td { padding: 0.2em; vertical-align: baseline } dt { float:
+      left; min-width: 1.75em; text-align: right; padding-right: 0.75em;
+      font-weight: bold; } dd { margin-left: 2.75em; padding-bottom: 0.25em; }
+      dd p { padding-top: 0em; } .subsup { display: inline; vertical-align:
+      -0.2em } .subsup td { padding: 0px; text-align: left} .fraction {
+      display: inline; vertical-align: -0.8em } .fraction td { padding: 0px;
+      text-align: center } .wide { position: relative; margin-left: -0.4em }
+      .accent { position: relative; margin-left: -0.4em; top: -0.1em }
+      .title-block { width: 100%; text-align: center } .title-block p {
+      margin: 0px } .compact-block p { margin-top: 0px; margin-bottom: 0px }
+      .left-tab { text-align: left } .center-tab { text-align: center }
+      .balloon-anchor { border-bottom: 1px dotted #000000; outline: none;
+      cursor: help; position: relative; } .balloon-anchor [hidden] {
+      margin-left: -999em; position: absolute; display: none; }
+      .balloon-anchor: hover [hidden] { position: absolute; left: 1em; top:
+      2em; z-index: 99; margin-left: 0; width: 500px; display: inline-block; }
+      .balloon-body { } .ornament { border-width: 1px; border-style: solid;
+      border-color: black; display: inline-block; padding: 0.2em; } .right-tab
+      { float: right; position: relative; top: -1em; } .no-breaks {
+      white-space: nowrap; } 
+    </style>
+    <link href="/notes/style.css" type="text/css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <table class="title-block" style="margin-bottom: 2em">
+      <tr>
+        <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
+          <tr>
+            <td><font style="font-size: 168.2%"><strong>Security: Introduction<span style="margin-left: 1em"></span><font
+            style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="../index.html">..</a>]</class></font> <font style="font-size: 59.5%"><class
+            style="font-variant: small-caps">[<a href="/notes/index.html">top</a>]</class></font></strong></font></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <h2 id="auto-1">1<span style="margin-left: 1em"></span>Notation<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class
+    style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Tuples
+          </dt>
+          <dd>
+            <p>
+              <img src="intro-1.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img><span style="margin-left: 1em"></span>brackets are omitted
+              when <img src="intro-2.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.114327272727273em; margin-top: -0.026569696969697em; vertical-align: -0.201018181818182em; height: 0.992969696969697em"></img> applied: <img src="intro-3.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+              instead of <img src="intro-4.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            XOR
+          </dt>
+          <dd>
+            <p>
+              <img src="intro-5.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0131878787878788em; margin-right: -0.0496484848484848em; margin-top: -0.0670060606060606em; vertical-align: -0.0861090909090909em; height: 0.769551515151515em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Concatenation
+          </dt>
+          <dd>
+            <p>
+              <img src="intro-6.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484848em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Sequences
+          </dt>
+          <dd>
+            <p>
+              given an alphabet <img src="intro-7.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0380121212121213em; vertical-align: 0em; height: 0.794375757575758em"></img>
+            </p>
+            <p>
+              <img src="intro-8.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0512em; vertical-align: 0em; height: 0.546133333333333em"></img> length sequence: <img src="intro-9.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484851em; margin-top: -0.0380121212121213em; vertical-align: 0em; height: 0.794375757575758em"></img>
+            </p>
+            <p>
+              any finite length (closure): <img src="intro-10.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0852363636363636em; vertical-align: 0em; height: 0.842569696969697em"></img>
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <h2 id="auto-2">2<span style="margin-left: 1em"></span>Basic definitions<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
+    <font style="font-size: 84.1%"><i><p>
+      These definitions were written as summaries based on my understanding of
+      the slides. When needed, the original notes should be consulted to check
+      for misunderstandings.
+    </p><p>
+      Some definitions were lifted word-for-word due to difficulty in
+      rephrasing while maintaining clarity.
+    </p></i></font>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Computer security
+          </dt>
+          <dd>
+            <p>
+              methods to keep computer systems and digital assets free from
+              risk
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Asset
+          </dt>
+          <dd>
+            <p>
+              something valuable
+            </p>
+            <p>
+              tangible like machinery, or
+            </p>
+            <p>
+              intangible like reputation
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Threat
+          </dt>
+          <dd>
+            <p>
+              circumstance/event that puts assets at risk
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Threat actors
+          </dt>
+          <dd>
+            <p>
+              that may or may not have malign intent
+            </p>
+            <p>
+              malign intent means it is an <dfn>attack</dfn>
+            </p>
+            <p>
+              otherwise, they may pose <dfn>accidental risk</dfn>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Vulnerability
+          </dt>
+          <dd>
+            <p>
+              a weakness in a component of a system&mdash;a potential
+              <dfn>attack surface</dfn> that may be used as a point of entry
+            </p>
+            <p>
+              internet etc. are potential external attack surfaces
+            </p>
+            <p>
+              systems reachable from inside are also viable internal attack
+              surfaces
+            </p>
+            <p>
+              humans are also an attack surface
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Exploits
+          </dt>
+          <dd>
+            <p>
+              tools used to exploit vulnerabilities, usually reusable on many
+              targets (<dfn>economies of scale</dfn>)
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Risks
+          </dt>
+          <dd>
+            <p>
+              a <dfn>risk</dfn> needs a <dfn>motivated and able threat</dfn>,
+              <dfn>an exploitable vulnerability</dfn>, and a
+              <dfn>negative/impact harm upon successful attack</dfn> to
+              manifest
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <h3 id="auto-3">2.1<span style="margin-left: 1em"></span>Desired properties<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h3>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Confidentiality
+          </dt>
+          <dd>
+            <p>
+              information not being disclosed to unauthorized entities
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Integrity
+          </dt>
+          <dd>
+            <p>
+              assets should not be altered by unauthorized entities
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Information integrity
+          </dt>
+          <dd>
+            <p>
+              unauthorized alteration should be detected and rejected
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Availability
+          </dt>
+          <dd>
+            <p>
+              information and resources should be available to authorized
+              parties
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Authorization
+          </dt>
+          <dd>
+            <p>
+              determines which actors have the right to access which resources
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Authentication
+          </dt>
+          <dd>
+            <p>
+              verification of identity of an actor
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Non-repudiation
+          </dt>
+          <dd>
+            <p>
+              means an actor cannot deny having taken an action
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <p>
+      
+    </p>
+  </body>
+</html>

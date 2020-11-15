@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:x="https://www.texmacs.org/2002/extensions" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <head>
+    <title>Access Control and Integrity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta content="TeXmacs 1.99.15" name="generator"></meta>
+    <style type="text/css">
+      body { text-align: justify } h5 { display: inline; padding-right: 1em }
+      h6 { display: inline; padding-right: 1em } table { border-collapse:
+      collapse } td { padding: 0.2em; vertical-align: baseline } dt { float:
+      left; min-width: 1.75em; text-align: right; padding-right: 0.75em;
+      font-weight: bold; } dd { margin-left: 2.75em; padding-bottom: 0.25em; }
+      dd p { padding-top: 0em; } .subsup { display: inline; vertical-align:
+      -0.2em } .subsup td { padding: 0px; text-align: left} .fraction {
+      display: inline; vertical-align: -0.8em } .fraction td { padding: 0px;
+      text-align: center } .wide { position: relative; margin-left: -0.4em }
+      .accent { position: relative; margin-left: -0.4em; top: -0.1em }
+      .title-block { width: 100%; text-align: center } .title-block p {
+      margin: 0px } .compact-block p { margin-top: 0px; margin-bottom: 0px }
+      .left-tab { text-align: left } .center-tab { text-align: center }
+      .balloon-anchor { border-bottom: 1px dotted #000000; outline: none;
+      cursor: help; position: relative; } .balloon-anchor [hidden] {
+      margin-left: -999em; position: absolute; display: none; }
+      .balloon-anchor: hover [hidden] { position: absolute; left: 1em; top:
+      2em; z-index: 99; margin-left: 0; width: 500px; display: inline-block; }
+      .balloon-body { } .ornament { border-width: 1px; border-style: solid;
+      border-color: black; display: inline-block; padding: 0.2em; } .right-tab
+      { float: right; position: relative; top: -1em; } .no-breaks {
+      white-space: nowrap; } 
+    </style>
+    <link href="/notes/style.css" type="text/css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <table class="title-block" style="margin-bottom: 2em">
+      <tr>
+        <td><table class="title-block" style="margin-top: 0.5em; margin-bottom: 0.5em">
+          <tr>
+            <td><font style="font-size: 168.2%"><strong>Access Control and Integrity<span style="margin-left: 1em"></span><font
+            style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="../index.html">..</a>]</class></font> <font style="font-size: 59.5%"><class
+            style="font-variant: small-caps">[<a href="/notes/index.html">top</a>]</class></font></strong></font></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <h2 id="auto-1">1<span style="margin-left: 1em"></span>Definitions [2.1]<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
+    <p>
+      <dfn>Access control</dfn> implements authorization, granting or denying
+      access accordingly.
+    </p>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Subject
+          </dt>
+          <dd>
+            <p>
+              an entity that may access objects <img src="access-1.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0688484848484849em; margin-top: -0.0628363636363637em; vertical-align: -0.0404363636363636em; height: 0.868848484848485em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Object
+          </dt>
+          <dd>
+            <p>
+              system resources <img src="access-2.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0496484848484848em; margin-top: -0.0628363636363637em; vertical-align: -0.0404363636363636em; height: 0.868848484848485em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Modes/permissions
+          </dt>
+          <dd>
+            <p>
+              ways in which <dfn>objects</dfn> can be accessed <img src="access-3.png"
+              style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0750545454545455em; margin-top: -0.0380121212121213em; vertical-align: -0.0404363636363636em; height: 0.844024242424242em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Authorized accesses
+          </dt>
+          <dd>
+            <p>
+              described by a set of tuples <img src="access-4.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0579878787878788em; margin-right: -0.0750545454545462em; margin-top: -0.0876606060606061em; vertical-align: -0.140606060606061em; height: 0.992969696969697em"></img>
+            </p>
+            <p>
+              we typically distinguish between permissions which <dfn>can be
+              granted</dfn> and permissions which <dfn>have been granted</dfn>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Discretionary access control (DAC)
+          </dt>
+          <dd>
+            <p>
+              each object has a subject as <dfn>owner</dfn>, which controls
+              its permissions (e.g. <class style="font-variant: small-caps">Unix</class> file
+              permissions)
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Mandatory access control (MAC)
+          </dt>
+          <dd>
+            <p>
+              administrator sets all permissions with central control,
+              preventing badly behaving users affecting security (e.g. <class
+              style="font-variant: small-caps">SELinux</class>)
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <h2 id="auto-2">2<span style="margin-left: 1em"></span>Access control structures [2.1]<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Access control matrix
+          </dt>
+          <dd>
+            <p>
+              matrix <img src="access-5.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.113745454545455em; margin-top: -0.0380121212121213em; vertical-align: 0em; height: 0.794375757575758em"></img> with entries for each subject
+              <img src="access-6.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0688484848484849em; margin-top: -0.0628363636363637em; vertical-align: -0.0404363636363636em; height: 0.868848484848485em"></img> and object <img src="access-7.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0496484848484848em; margin-top: -0.0628363636363637em; vertical-align: -0.0404363636363636em; height: 0.868848484848485em"></img> pair
+              such that
+            </p>
+            <p>
+              <img src="access-8.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0330666666666666em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.289066666666667em; height: 1.14133333333333em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Access control lists
+          </dt>
+          <dd>
+            <p>
+              a list <img src="access-9.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484849em; margin-right: -0.0496484848484848em; margin-top: -0.0876606060606061em; vertical-align: -0.148363636363636em; height: 0.992387878787879em"></img> for each object <img src="access-7.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0588606060606061em; margin-right: -0.0496484848484848em; margin-top: -0.0628363636363637em; vertical-align: -0.0404363636363636em; height: 0.868848484848485em"></img>
+              containing permissible subject-permission pairs
+            </p>
+            <p>
+              <span class="no-breaks"><img src="access-10.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>,</span> easier to modify
+              for specific objects
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Capabilities
+          </dt>
+          <dd>
+            <p>
+              subject store tokens which determine their permissions
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <h2 id="auto-3">3<span style="margin-left: 1em"></span>Security models<span style="margin-left: 1em"></span><font
+    style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span style="margin-left: 1em"></span></h2>
+    <h3 id="auto-4">3.1<span style="margin-left: 1em"></span><class style="font-variant: small-caps">Bell-LaPadula</class> model
+    [2.2]<span style="margin-left: 1em"></span><font style="font-size: 59.5%"><class style="font-variant: small-caps">[<a href="#">up</a>]</class></font><span
+    style="margin-left: 1em"></span></h3>
+    <p>
+      Aims to achieve <strong>confidentiality</strong> only.
+    </p>
+    <div class="compact-block">
+      <ul>
+        <li>
+          <p>
+            Permissions <img src="access-11.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+          </p>
+        </li>
+        <li>
+          <p>
+            Set of security levels <img src="access-12.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0744727272727273em; margin-right: -0.0496484848484848em; margin-top: -0.0628363636363637em; vertical-align: 0em; height: 0.844024242424242em"></img> comparable by <img
+            src="access-13.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0579878787878788em; margin-right: -0.0496484848484848em; margin-top: -0.0621575757575757em; vertical-align: -0.140606060606061em; height: 0.91849696969697em"></img> (should be a <dfn>lattice</dfn>)
+          </p>
+        </li>
+        <li>
+          <p>
+            Maximum security level for each subject (clearance) <img src="access-14.png"
+            style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.0496484848484853em; margin-top: -0.0513939393939394em; vertical-align: -0.201018181818182em; height: 1.01779393939394em"></img>
+          </p>
+        </li>
+        <li>
+          <p>
+            Current security level for each subject <img src="access-15.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.0496484848484853em; margin-top: -0.0513939393939394em; vertical-align: -0.201018181818182em; height: 1.01779393939394em"></img>
+          </p>
+        </li>
+        <li>
+          <p>
+            Classification for each object <img src="access-16.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0472242424242424em; margin-right: -0.0496484848484853em; margin-top: -0.0513939393939394em; vertical-align: -0.201018181818182em; height: 1.01779393939394em"></img>
+          </p>
+        </li>
+        <li>
+          <p>
+            Set of allowable permissions <img src="access-17.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+          </p>
+        </li>
+        <li>
+          <p>
+            Set of granted permissions <img src="access-18.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p>
+      Systems evolve through <dfn>states</dfn>, which are individually
+      considered secure if they satisfy the conditions below, and the system
+      is secure if every implementation action preserves these conditions.
+    </p>
+    <div class="compact-block">
+      <dl>
+        <p>
+          <dt>
+            Discretionary security property
+          </dt>
+          <dd>
+            <p>
+              (ds-property)
+            </p>
+            <p>
+              If access <img src="access-19.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484853em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img> has been granted, then <img
+              src="access-20.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484853em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            Simple security property
+          </dt>
+          <dd>
+            <p>
+              (ss-property)
+            </p>
+            <p>
+              If access <img src="access-21.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img> or <img src="access-22.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+              granted, then <img src="access-23.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+            </p>
+          </dd>
+        </p>
+        <p>
+          <dt>
+            *-property
+          </dt>
+          <dd>
+            <p>
+              (no write-down)
+            </p>
+            <p>
+              If access <img src="access-22.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img> or <img src="access-24.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484853em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img>
+              granted, then <img src="access-25.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0435393939393939em; vertical-align: -0.258521212121212em; height: 1.11709090909091em"></img> and <img src="access-26.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484853em; margin-top: -0.0669090909090908em; vertical-align: -0.258521212121212em; height: 1.14046060606061em"></img>
+              for all <img src="access-27.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0496484848484848em; margin-right: -0.0496484848484848em; margin-top: -0.0695272727272727em; vertical-align: 0em; height: 0.892218181818182em"></img> where access <img src="access-28.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0669090909090908em; vertical-align: -0.258521212121212em; height: 1.14046060606061em"></img>
+              or <img src="access-29.png" style="margin-left: -0.0496484848484848em; margin-bottom: -0.0393696969696969em; margin-right: -0.0496484848484844em; margin-top: -0.0669090909090908em; vertical-align: -0.258521212121212em; height: 1.14046060606061em"></img> granted
+            </p>
+          </dd>
+        </p>
+      </dl>
+    </div>
+    <p>
+      <font style="font-size: 84.1%"><i>Note that the permission <class style="font-variant: small-caps">write</class>
+      includes permissions to read the file (something like <tt class="verbatim">rw</tt>
+      mode), while <class style="font-variant: small-caps">append</class> does not.</i></font>
+    </p>
+  </body>
+</html>

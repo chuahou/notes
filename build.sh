@@ -18,12 +18,7 @@ texmacs $(find . -type f -name '*.tm.tmp' |
 
 # modify HTML files
 for tmfile in $(find . -type f -name '*.tm.tmp'); do
-	htmlfile=$(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
-	# add responsiveness
-	sed -i 's/<\/title>/<\/title>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n/' $htmlfile
-
-	# add to top links
-	sed -i 's/\(<h[1-6][^>]*>.*\)\(<\/h[1-6]>\)/\1<a class="toplink" href="#">TO TOP<\/a>\2/' $htmlfile
+	sed -i -f build.sed $(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
 done
 
 # remove created temporary files

@@ -33,7 +33,12 @@ body {
 	background: #fffdf7;
 }
 
-media only screen and (max-width: 768px) {
-   body {
-   	font-size: 90%
-   }
+.toplink {
+	font-size: 55%;
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 110%;
+	}
+}

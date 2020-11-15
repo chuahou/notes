@@ -16,9 +16,14 @@ done
 texmacs $(find . -type f -name '*.tm.tmp' |
 	sed 's/\(.*\)\.tm.tmp/-c \1.tm.tmp \1.html/') -q
 
-# add responsiveness
+# modify HTML files
 for tmfile in $(find . -type f -name '*.tm.tmp'); do
-	sed -i 's/<\/title>/<\/title>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n/' $(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
+	htmlfile=$(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
+	# add responsiveness
+	sed -i 's/<\/title>/<\/title>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n/' $htmlfile
+
+	# add to top links
+	sed -i 's/\(<h[1-6][^>]*>.*\)\(<\/h[1-6]>\)/\1<a class="toplink" href="#">TO TOP<\/a>\2/' $htmlfile
 done
 
 # remove created temporary files

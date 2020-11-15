@@ -8,9 +8,13 @@
   <section*|Welcome>
 
   <with|font-shape|italic|<text-dots> to my <name|corner>.> It is
-  written/converted to HTML using <name|TeXmacs>. To obtain the original
-  file, change the <verbatim|.html> extension to <verbatim|.tm>. The style
-  file can be found <hlink|here|/notes/notesStyle.ts>.
+  written/converted to HTML using <name|TeXmacs>.
+
+  I strongly recommend viewing using <name|TeXmacs> directly, as HTML has an
+  inferior presentation due to limitations of conversion. The entire project
+  can be found on <hlink|<name|GitHub>|https://github.com/chuahou/notes>
+  (<hlink|<with|font-shape|small-caps|ssh>
+  link|git@github.com:chuahou/notes>).
 
   <section*|Notes>
 

@@ -9,6 +9,8 @@ for tmfile in $(find . -type f -name '*.tm'); do
 		# temporary file
 		sed 's/biolinum-font|//' $tmfile > $tmfile.tmp
 		sed -i 's/biolinum-font>/>/' $tmfile.tmp
+
+		echo "Building $tmfile..."
 	fi
 done
 
@@ -18,7 +20,16 @@ texmacs $(find . -type f -name '*.tm.tmp' |
 
 # modify HTML files
 for tmfile in $(find . -type f -name '*.tm.tmp'); do
-	sed -i -f build.sed $(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
+	HTMLFILE=$(sed 's/\.tm\.tmp/\.html/' <<< $tmfile)
+
+	# add responsiveness
+	sed -i 's@</title>@</title>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n@' $HTMLFILE
+
+	# change URL of top page
+	sed -i 's@~/dev/notes/index.html@/notes/index.html@' $HTMLFILE
+
+	# remove TOC
+	perl -i -p0e 's/<h2>Table of contents.*?<\/div>//sm' $HTMLFILE
 done
 
 # remove created temporary files

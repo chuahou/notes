@@ -5,6 +5,73 @@
 <\body>
   <doc-data|<doc-title|Pop_OS! Installation Procedure>>
 
+  <\table-of-contents|toc>
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>Miscellanous
+    useful commands<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-425A7A018-EA70>|<link|hyperlink|<id|%427C64338-425A7A018-EA70>|<url|#>>|up>]>>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-1><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|2<space|2spc>Procedure<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-427FA2138-EA70>|<link|hyperlink|<id|%427C64338-427FA2138-EA70>|<url|#>>|up>]>>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-2><vspace|0.5fn>
+
+    <with|par-left|1tab|2.1<space|2spc>Partitioning<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-42584D570-EA70>|<link|hyperlink|<id|%427C64338-42584D570-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-3>>
+
+    <with|par-left|1tab|2.2<space|2spc>Installer<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4272A1178-EA70>|<link|hyperlink|<id|%427C64338-4272A1178-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-4>>
+
+    <with|par-left|1tab|2.3<space|2spc>Post-install<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-425862590-EA70>|<link|hyperlink|<id|%427C64338-425862590-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-5>>
+
+    <with|par-left|2tab|2.3.1<space|2spc>Set up
+    subvolumes<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-42585EF78-EA70>|<link|hyperlink|<id|%427C64338-42585EF78-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-6>>
+
+    <with|par-left|2tab|2.3.2<space|2spc>Edit
+    /etc/fstab<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-425833B10-EA70>|<link|hyperlink|<id|%427C64338-425833B10-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-7>>
+
+    <with|par-left|2tab|2.3.3<space|2spc>Add
+    rootflags<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-425828B08-EA70>|<link|hyperlink|<id|%427C64338-425828B08-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-8>>
+
+    <with|par-left|2tab|2.3.4<space|2spc><with|font-shape|small-caps|chroot>
+    and set-up<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4258325C8-EA70>|<link|hyperlink|<id|%427C64338-4258325C8-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-9>>
+
+    <with|par-left|2tab|2.3.5<space|2spc>Other
+    <with|font-shape|small-caps|btrfs> partitions<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4257EEBE8-EA70>|<link|hyperlink|<id|%427C64338-4257EEBE8-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-10>>
+
+    <with|par-left|1tab|2.4<space|2spc>Post-reboot<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4257F7360-EA70>|<link|hyperlink|<id|%427C64338-4257F7360-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-11>>
+
+    <with|par-left|2tab|2.4.1<space|2spc>Install
+    <with|font-shape|small-caps|Windows><space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4257D3638-EA70>|<link|hyperlink|<id|%427C64338-4257D3638-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-12>>
+
+    <with|par-left|2tab|2.4.2<space|2spc><with|font-shape|small-caps|Firefox>
+    configuration<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-4257E8220-EA70>|<link|hyperlink|<id|%427C64338-4257E8220-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-13>>
+
+    <with|par-left|2tab|2.4.3<space|2spc>HP printer
+    setup<space|1em><with|font-size|0.595|<with|font-shape|small-caps|[<locus|<id|%427C64338-42574E880-EA70>|<link|hyperlink|<id|%427C64338-42574E880-EA70>|<url|#>>|up>]>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-14>>
+  </table-of-contents>
+
   <\remark*>
     Tested on:
 
@@ -251,6 +318,24 @@
 
         ./init.sh
       </verbatim-code>
+
+      <item>Edit hostname in /etc/hostname, /etc/hosts.
+
+      <item>Add to root crontab <verbatim|sudo crontab -e>
+
+      <\itemize>
+        <item><verbatim|0 * * * * apt-get update>
+      </itemize>
+
+      <item>Console font: <verbatim|dpkg-reconfigure console-setup>
+
+      <item>GnuPG setup
+
+      <\itemize>
+        <item>~/.gnupg/gpg.conf: <verbatim|default-key [<text-dots>]>
+
+        <item>~/.gnupg/gpg-agent.conf: <verbatim|no-allow-external-cache>
+      </itemize>
     </itemize>
   </compact>
 
@@ -291,19 +376,19 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
-    <associate|auto-10|<tuple|2.3.5|2>>
+    <associate|auto-10|<tuple|2.3.5|3>>
     <associate|auto-11|<tuple|2.4|3>>
     <associate|auto-12|<tuple|2.4.1|3>>
     <associate|auto-13|<tuple|2.4.2|3>>
     <associate|auto-14|<tuple|2.4.3|3>>
     <associate|auto-2|<tuple|2|1>>
     <associate|auto-3|<tuple|2.1|1>>
-    <associate|auto-4|<tuple|2.2|1>>
-    <associate|auto-5|<tuple|2.3|1>>
-    <associate|auto-6|<tuple|2.3.1|1>>
+    <associate|auto-4|<tuple|2.2|2>>
+    <associate|auto-5|<tuple|2.3|2>>
+    <associate|auto-6|<tuple|2.3.1|2>>
     <associate|auto-7|<tuple|2.3.2|2>>
     <associate|auto-8|<tuple|2.3.3|2>>
-    <associate|auto-9|<tuple|2.3.4|2>>
+    <associate|auto-9|<tuple|2.3.4|3>>
   </collection>
 </references>
 
@@ -311,60 +396,68 @@
   <\collection>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Miscellanous
-      useful commands> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      useful commands<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-42582ECE8-EA70>|<link|hyperlink|<id|%427C64338-42582ECE8-EA70>|<url|#>>|up>]>>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Procedure>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>Procedure<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4258715C8-EA70>|<link|hyperlink|<id|%427C64338-4258715C8-EA70>|<url|#>>|up>]>>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
-      <with|par-left|<quote|1tab>|2.1<space|2spc>Partitioning
+      <with|par-left|<quote|1tab>|2.1<space|2spc>Partitioning<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-425AA8F68-EA70>|<link|hyperlink|<id|%427C64338-425AA8F68-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-3>>
 
-      <with|par-left|<quote|1tab>|2.2<space|2spc>Installer
+      <with|par-left|<quote|1tab>|2.2<space|2spc>Installer<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4272E1318-EA70>|<link|hyperlink|<id|%427C64338-4272E1318-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-4>>
 
-      <with|par-left|<quote|1tab>|2.3<space|2spc>Post-install
+      <with|par-left|<quote|1tab>|2.3<space|2spc>Post-install<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4258740F0-EA70>|<link|hyperlink|<id|%427C64338-4258740F0-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5>>
 
-      <with|par-left|<quote|2tab>|2.3.1<space|2spc>Set up subvolumes
+      <with|par-left|<quote|2tab>|2.3.1<space|2spc>Set up
+      subvolumes<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-425BB3D98-EA70>|<link|hyperlink|<id|%427C64338-425BB3D98-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
 
-      <with|par-left|<quote|2tab>|2.3.2<space|2spc>Edit /etc/fstab
+      <with|par-left|<quote|2tab>|2.3.2<space|2spc>Edit
+      /etc/fstab<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4258791E8-EA70>|<link|hyperlink|<id|%427C64338-4258791E8-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
 
-      <with|par-left|<quote|2tab>|2.3.3<space|2spc>Add rootflags
+      <with|par-left|<quote|2tab>|2.3.3<space|2spc>Add
+      rootflags<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-42582AEC8-EA70>|<link|hyperlink|<id|%427C64338-42582AEC8-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-8>>
 
       <with|par-left|<quote|2tab>|2.3.4<space|2spc><with|font-shape|<quote|small-caps>|chroot>
-      and set-up <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      and set-up<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4257F1430-EA70>|<link|hyperlink|<id|%427C64338-4257F1430-EA70>|<url|#>>|up>]>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-9>>
 
       <with|par-left|<quote|2tab>|2.3.5<space|2spc>Other
-      <with|font-shape|<quote|small-caps>|btrfs> partitions
+      <with|font-shape|<quote|small-caps>|btrfs>
+      partitions<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4257D3830-EA70>|<link|hyperlink|<id|%427C64338-4257D3830-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-10>>
 
-      <with|par-left|<quote|1tab>|2.4<space|2spc>Post-reboot
+      <with|par-left|<quote|1tab>|2.4<space|2spc>Post-reboot<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-4257DF638-EA70>|<link|hyperlink|<id|%427C64338-4257DF638-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-11>>
 
       <with|par-left|<quote|2tab>|2.4.1<space|2spc>Install
-      <with|font-shape|<quote|small-caps>|Windows>
+      <with|font-shape|<quote|small-caps>|Windows><space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-42652A8C0-EA70>|<link|hyperlink|<id|%427C64338-42652A8C0-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-12>>
 
       <with|par-left|<quote|2tab>|2.4.2<space|2spc><with|font-shape|<quote|small-caps>|Firefox>
-      configuration <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      configuration<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-425A7E500-EA70>|<link|hyperlink|<id|%427C64338-425A7E500-EA70>|<url|#>>|up>]>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-13>>
 
-      <with|par-left|<quote|2tab>|2.4.3<space|2spc>HP printer setup
+      <with|par-left|<quote|2tab>|2.4.3<space|2spc>HP printer
+      setup<space|1em><with|font-size|<quote|0.595>|<with|font-shape|<quote|small-caps>|[<locus|<id|%427C64338-42652EAC0-EA70>|<link|hyperlink|<id|%427C64338-42652EAC0-EA70>|<url|#>>|up>]>>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-14>>
     </associate>

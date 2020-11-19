@@ -30,6 +30,9 @@ for tmfile in $(find . -type f -name '*.tm.tmp'); do
 
 	# remove TOC
 	perl -i -p0e 's/<h2>Table of contents.*?<\/div>//sm' $HTMLFILE
+
+	# strip trailing whitespace
+	sed -i 's/\s\+$//' $HTMLFILE
 done
 
 # remove created temporary files
